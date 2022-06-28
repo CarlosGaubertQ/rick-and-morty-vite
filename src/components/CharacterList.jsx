@@ -3,10 +3,11 @@ import Character from "./Character";
 
 function NavPage(props) {
   return (
-    <header className="flex justify-between  content-center items-center container mx-auto">
-      <p>Pagina: 1</p>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-        Button
+    <header className="flex justify-between  content-center items-center container mx-auto py-11">
+      <p>Pagina: {props.page}</p>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+      onClick={() => props.setPage(props.page + 1)}>
+        Pagina : {props.page + 1}
       </button>
     </header>
   );
@@ -35,7 +36,7 @@ function characterList() {
 
   return (
     <div>
-      <NavPage/>
+      <NavPage page={page} setPage={setPage}/>
       {loading ? (
         <div className="grid grid-cols-3 gap-3">Loading</div>
       ) : (
@@ -45,6 +46,7 @@ function characterList() {
           })}
         </div>
       )}
+      <NavPage page={page} setPage={setPage}/>
     </div>
   );
 }
