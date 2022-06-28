@@ -1,15 +1,12 @@
-import CharacterList from './components/CharacterList'
+import CharacterList from "./components/CharacterList";
 
 function App() {
- 
-
-  return <div className="container">
-      <h1>Rick And Morty</h1>
-
+  return (
+    <div className="bg-stone-900 text-white">
+      <p className="text-7xl text-center py-8">Rick And Morty</p>
       <CharacterList />
-     
-   
-    </div>;
+    </div>
+  );
 }
 
-export default App  
+export default App;
